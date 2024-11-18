@@ -1,26 +1,53 @@
 using Microsoft.EntityFrameworkCore;
 
-namespace YourProjectName.Data
+namespace PRO05_backend_riley_tanya_dani_levi.Data
 {
     public class AppDbContext : DbContext
     {
-        // Constructor to receive database configuration options
         public AppDbContext(DbContextOptions<AppDbContext> options) 
-            : base(options) {}
+            : base(options) {
+                
+            Users = Set<User>();
+            Recipes = Set<Recipe>();
+            Collections = Set<Collection>();
+            CollectionRecipes = Set<CollectionRecipe>();
 
-        // Define database tables as DbSet properties
+            }
+
         public DbSet<User> Users { get; set; }
+        public DbSet<Recipe> Recipes { get; set; }
         public DbSet<Collection> Collections { get; set; }
-        public DbSet<Item> Items { get; set; }
+        public DbSet<CollectionRecipe> CollectionRecipes { get; set; }
 
-        // Optional: Configure relationships and constraints
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // Example: Configure relationships
+            // User to Recipes relationship
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.Recipes)
+                .WithOne(r => r.User)
+                .HasForeignKey(r => r.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // User to Collections relationship
+            modelBuilder.Entity<User>()
+                .HasMany(u => u.Collections)
+                .WithOne(c => c.User)
+                .HasForeignKey(c => c.UserId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // Collection to CollectionRecipes relationship
             modelBuilder.Entity<Collection>()
-                .HasOne(c => c.User)
-                .WithMany(u => u.Collections)
-                .HasForeignKey(c => c.UserId);
+                .HasMany(c => c.CollectionRecipes)
+                .WithOne(cr => cr.Collection)
+                .HasForeignKey(cr => cr.CollectionId)
+                .OnDelete(DeleteBehavior.Cascade);
+
+            // Recipe to CollectionRecipes relationship
+            modelBuilder.Entity<Recipe>()
+                .HasMany(r => r.CollectionRecipes)
+                .WithOne(cr => cr.Recipe)
+                .HasForeignKey(cr => cr.RecipeId)
+                .OnDelete(DeleteBehavior.Cascade);
         }
     }
 }
