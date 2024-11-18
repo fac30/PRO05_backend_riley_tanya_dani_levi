@@ -1,6 +1,6 @@
 # Build Folders
-bin/
-obj/
+/bin/
+/obj/
 out/
 
 # User-specific Files
