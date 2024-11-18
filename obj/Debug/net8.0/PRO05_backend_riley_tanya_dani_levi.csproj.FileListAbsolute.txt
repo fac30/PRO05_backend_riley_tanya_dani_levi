@@ -1,0 +1,8 @@
+/Users/danielle/Desktop/Week 10/PRO05_backend_riley_tanya_dani_levi/obj/Debug/net8.0/PRO05_backend_riley_tanya_dani_levi.csproj.AssemblyReference.cache
+/Users/danielle/Desktop/Week 10/PRO05_backend_riley_tanya_dani_levi/obj/Debug/net8.0/PRO05_backend_riley_tanya_dani_levi.GeneratedMSBuildEditorConfig.editorconfig
+/Users/danielle/Desktop/Week 10/PRO05_backend_riley_tanya_dani_levi/obj/Debug/net8.0/PRO05_backend_riley_tanya_dani_levi.AssemblyInfoInputs.cache
+/Users/danielle/Desktop/Week 10/PRO05_backend_riley_tanya_dani_levi/obj/Debug/net8.0/PRO05_backend_riley_tanya_dani_levi.AssemblyInfo.cs
+/Users/danielle/Desktop/Week 10/PRO05_backend_riley_tanya_dani_levi/obj/Debug/net8.0/PRO05_backend_riley_tanya_dani_levi.csproj.CoreCompileInputs.cache
+/Users/danielle/Desktop/Week 10/PRO05_backend_riley_tanya_dani_levi/obj/Debug/net8.0/PRO05_backend_riley_tanya_dani_levi.MvcApplicationPartsAssemblyInfo.cs
+/Users/danielle/Desktop/Week 10/PRO05_backend_riley_tanya_dani_levi/obj/Debug/net8.0/PRO05_backend_riley_tanya_dani_levi.MvcApplicationPartsAssemblyInfo.cache
+/Users/danielle/Desktop/Week 10/PRO05_backend_riley_tanya_dani_levi/obj/Debug/net8.0/PRO05_backend_riley_tanya_dani_levi.sourcelink.json
