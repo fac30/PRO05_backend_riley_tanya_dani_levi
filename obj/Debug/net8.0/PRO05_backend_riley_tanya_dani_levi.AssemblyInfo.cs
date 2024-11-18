@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("PRO05_backend_riley_tanya_dani_levi")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+94354c4cadb9086fc2e466bbff59c3fd7ae306ff")]
 [assembly: System.Reflection.AssemblyProductAttribute("PRO05_backend_riley_tanya_dani_levi")]
 [assembly: System.Reflection.AssemblyTitleAttribute("PRO05_backend_riley_tanya_dani_levi")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
