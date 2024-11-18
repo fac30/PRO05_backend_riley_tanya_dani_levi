@@ -1014,19 +1014,19 @@
     ]
   },
   "packageFolders": {
-    "/Users/rilez/.nuget/packages/": {}
+    "/Users/tatianagurova/.nuget/packages/": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/rilez/Desktop/PRO05_backend_riley_tanya_dani_levi/PRO05_backend_riley_tanya_dani_levi.csproj",
+      "projectUniqueName": "/Users/tatianagurova/Desktop/Studying/course_FAC/PRO05_backend_riley_tanya_dani_levi/PRO05_backend_riley_tanya_dani_levi.csproj",
       "projectName": "PRO05_backend_riley_tanya_dani_levi",
-      "projectPath": "/Users/rilez/Desktop/PRO05_backend_riley_tanya_dani_levi/PRO05_backend_riley_tanya_dani_levi.csproj",
-      "packagesPath": "/Users/rilez/.nuget/packages/",
-      "outputPath": "/Users/rilez/Desktop/PRO05_backend_riley_tanya_dani_levi/obj/",
+      "projectPath": "/Users/tatianagurova/Desktop/Studying/course_FAC/PRO05_backend_riley_tanya_dani_levi/PRO05_backend_riley_tanya_dani_levi.csproj",
+      "packagesPath": "/Users/tatianagurova/.nuget/packages/",
+      "outputPath": "/Users/tatianagurova/Desktop/Studying/course_FAC/PRO05_backend_riley_tanya_dani_levi/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "/Users/rilez/.nuget/NuGet/NuGet.Config"
+        "/Users/tatianagurova/.nuget/NuGet/NuGet.Config"
       ],
       "originalTargetFrameworks": [
         "net8.0"
@@ -1083,7 +1083,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.303/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/local/share/dotnet/sdk/8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
