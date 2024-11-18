@@ -7,7 +7,7 @@ builder.Services.AddSwaggerGen(c =>
 {
      c.SwaggerDoc("v1", new OpenApiInfo {
          Title = "CookNest API",
-         Description = "Creating and delivering the recipes you need",
+         Description = "Making the recipes you love",
          Version = "v1" });
 });
 
