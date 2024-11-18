@@ -26,3 +26,9 @@ CREATE TABLE collections (
    is_public BOOLEAN DEFAULT TRUE,
    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
+
+CREATE TABLE collection_recipes (
+   id SERIAL PRIMARY KEY,
+   collection_id INT NOT NULL REFERENCES collections(id) ON DELETE CASCADE,
+   recipe_id INT NOT NULL REFERENCES recipes(id) ON DELETE CASCADE
+);
