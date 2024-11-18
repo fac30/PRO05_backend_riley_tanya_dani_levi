@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="../build/PRO05_backend_riley_tanya_dani_levi.props" />
+</Project>
