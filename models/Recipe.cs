@@ -30,7 +30,7 @@ public class Recipe
 
     // Navigation properties
     [ForeignKey(nameof(UserId))]
-    public  User User { get; set; }
+    public  User? User { get; set; }
 
     public ICollection<CollectionRecipe>? CollectionRecipes { get; set; }
 }
