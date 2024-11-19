@@ -55,4 +55,14 @@ app.MapGet("/recipes", async (AppDbContext db) =>
     }).ToListAsync();
 });
 
+app.MapGet("/users", async (AppDbContext db) => 
+{
+    return await db.Users.Select(u => new 
+    {
+        u.Username
+    }).ToListAsync();
+});
+
+
+
 app.Run();
