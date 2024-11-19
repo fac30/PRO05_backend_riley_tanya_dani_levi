@@ -21,8 +21,13 @@ namespace PRO05_backend_riley_tanya_dani_levi.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // User to Recipes relationship
-            modelBuilder.Entity<User>()
+                base.OnModelCreating(modelBuilder);
+
+
+                // Define the relationships first, always:
+
+
+                modelBuilder.Entity<User>()
                 .HasMany(u => u.Recipes)
                 .WithOne(r => r.User)
                 .HasForeignKey(r => r.UserId)
@@ -42,12 +47,60 @@ namespace PRO05_backend_riley_tanya_dani_levi.Data
                 .HasForeignKey(cr => cr.CollectionId)
                 .OnDelete(DeleteBehavior.Cascade);
 
-            // Recipe to CollectionRecipes relationship
             modelBuilder.Entity<Recipe>()
                 .HasMany(r => r.CollectionRecipes)
                 .WithOne(cr => cr.Recipe)
                 .HasForeignKey(cr => cr.RecipeId)
                 .OnDelete(DeleteBehavior.Cascade);
+
+
+            // User to Recipes relationship seeds
+            modelBuilder.Entity<User>().HasData(
+                new User 
+                {
+                    Id = 1,
+                    Username = "John Doe", // Example property
+                    Email = "john.doe@example.com",
+                    PasswordHash = "Foodie123",
+                    CreatedAt = DateTime.UtcNow,
+                },
+                new User 
+                {
+                    Id = 2,
+                    Username = "Jane Smith", // Example property
+                    Email = "jane.smith@example.com",
+                    PasswordHash = "Burgers345",
+                    CreatedAt = DateTime.UtcNow,
+                }
+            );
+
+            // Recipe to CollectionRecipes relationship seeds 
+            modelBuilder.Entity<Recipe>().HasData(
+                new Recipe
+                {
+                    Id = 1,
+                    UserId = 1, 
+                    Title = "Spaghetti Bolognese",
+                    Ingredients = "Spaghetti, minced beef, tomato sauce, onions, garlic",
+                    Description = "A classic Italian pasta dish.",
+                    IsPublic = true,
+                    CreatedAt = DateTime.UtcNow,
+                    UpdatedAt = DateTime.UtcNow,
+                    CookingTime = 30
+                }, 
+                new Recipe {
+                    Id = 2,
+                    UserId = 2,
+                    Title = "Vegetable Stir Fry",
+                    Ingredients = "Mixed vegetables, soy sauce, garlic, ginger",
+                    Description = "A quick and healthy stir fry.",
+                    IsPublic = true,
+                    CreatedAt = DateTime.UtcNow,
+                    UpdatedAt = DateTime.UtcNow,
+                    CookingTime = 15
+                }
+            );
         }
     }
 }
+
