@@ -27,7 +27,9 @@ if (app.Environment.IsDevelopment())
    });
 }
 
-app.MapGet("/", () => "Hello World!");
-
+app.MapGet("/recipes", async (AppDbContext db) => 
+{
+    return await db.Recipes.ToListAsync();
+});
 
 app.Run();
