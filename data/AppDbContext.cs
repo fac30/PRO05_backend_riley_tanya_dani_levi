@@ -52,6 +52,12 @@ namespace PRO05_backend_riley_tanya_dani_levi.Data
                 .WithOne(cr => cr.Recipe)
                 .HasForeignKey(cr => cr.RecipeId)
                 .OnDelete(DeleteBehavior.Cascade);
+            
+            modelBuilder.Entity<Recipe>()
+                .HasOne(r => r.User) // Each Recipe has one User
+                .WithMany(u => u.Recipes) // Each User can have many Recipes (optional if not modeled in User)
+                .HasForeignKey(r => r.UserId) // Foreign key in Recipe table
+                .OnDelete(DeleteBehavior.Cascade); // Optional: Define cascade delete behavior
 
 
             // User to Recipes relationship seeds
@@ -100,11 +106,6 @@ namespace PRO05_backend_riley_tanya_dani_levi.Data
                     CookingTime = 15
                 }
             );
-        }
-
-        internal async Task SaveChangesAsync()
-        {
-            throw new NotImplementedException();
         }
     }
 }
