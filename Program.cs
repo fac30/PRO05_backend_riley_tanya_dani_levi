@@ -44,7 +44,15 @@ app.UseCors("AllowFrontend");
 
 app.MapGet("/recipes", async (AppDbContext db) => 
 {
-    return await db.Recipes.ToListAsync();
+    return await db.Recipes.Select(r => new 
+    {
+        r.Title,
+        r.UserId,
+        r.Ingredients,
+        r.Description,
+        r.CookingTime,
+        Username = r.User.Username 
+    }).ToListAsync();
 });
 
 app.Run();
