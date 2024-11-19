@@ -1,6 +1,6 @@
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
-using PRO05_backend_riley_tanya_dani_levi.Data; // Add this namespace
+using PRO05_backend_riley_tanya_dani_levi.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -11,6 +11,18 @@ builder.Services.AddSwaggerGen(c =>
          Title = "CookNest API",
          Description = "Making the recipes you love",
          Version = "v1" });
+});
+
+// to configure CORS for connection with frontend
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowFrontend",
+        policy =>
+        {
+            policy.WithOrigins("*") // Replace with your frontend URL when ready
+                  .AllowAnyHeader()
+                  .AllowAnyMethod();
+        });
 });
 
 // Add database context configuration BEFORE app.Build()
@@ -27,7 +39,12 @@ if (app.Environment.IsDevelopment())
    });
 }
 
-app.MapGet("/", () => "Hello World!");
+// Enable CORS
+app.UseCors("AllowFrontend");
 
+app.MapGet("/recipes", async (AppDbContext db) => 
+{
+    return await db.Recipes.ToListAsync();
+});
 
 app.Run();
