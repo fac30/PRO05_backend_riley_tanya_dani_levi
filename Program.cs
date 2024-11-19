@@ -44,15 +44,18 @@ app.UseCors("AllowFrontend");
 
 app.MapGet("/recipes", async (AppDbContext db) => 
 {
-    return await db.Recipes.Select(r => new 
-    {
-        r.Title,
-        r.UserId,
-        r.Ingredients,
-        r.Description,
-        r.CookingTime,
-        Username = r.User.Username 
-    }).ToListAsync();
+    return await db.Recipes
+        .Include(r => r.User) // Eagerly load the User entity
+        .Select(r => new 
+        {
+            r.Title,
+            r.UserId,
+            r.Ingredients,
+            r.Description,
+            r.CookingTime,
+            Username = r.User != null ? r.User.Username : "Unknown" // Safeguard for null User
+        })
+        .ToListAsync();
 });
 
 app.MapGet("/users", async (AppDbContext db) => 
