@@ -42,6 +42,9 @@ if (app.Environment.IsDevelopment())
 // Enable CORS
 app.UseCors("AllowFrontend");
 
-app.MapGet("/", () => "Hello World!");
+app.MapGet("/recipes", async (AppDbContext db) => 
+{
+    return await db.Recipes.ToListAsync();
+});
 
 app.Run();
