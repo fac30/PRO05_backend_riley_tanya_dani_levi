@@ -66,11 +66,5 @@ app.MapGet("/users", async (AppDbContext db) =>
     }).ToListAsync();
 });
 
-app.MapPost("/recipes", async (AppDbContext db, Recipe recipe) => 
-{
-    db.Recipes.Add(recipe);
-    await db.SaveChangesAsync();
-    return Results.Created($"/recipes/{recipe.Id}", recipe); // Assuming Recipe has an Id property
-});
 
 app.Run();
