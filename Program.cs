@@ -71,7 +71,7 @@ app.MapPost("/recipes", async (AppDbContext db, RecipeDto recipeDto) =>
     var recipe = new Recipe 
     {
         Title = recipeDto.Title,
-        Ingredients = recipeDto.Ingredients,
+        Ingredients = string.Join(", ", recipeDto.Ingredients), // Convert List<string> to a comma-separated string
         Description = recipeDto.Description,
         CookingTime = recipeDto.CookingTime,
         UserId = recipeDto.UserId // Set UserId from DTO
