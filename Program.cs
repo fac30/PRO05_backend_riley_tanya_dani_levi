@@ -66,11 +66,20 @@ app.MapGet("/users", async (AppDbContext db) =>
     }).ToListAsync();
 });
 
-app.MapPost("/recipes", async (AppDbContext db, Recipe recipe) => 
+app.MapPost("/recipes", async (AppDbContext db, RecipeDto recipeDto) => 
 {
+    var recipe = new Recipe 
+    {
+        Title = recipeDto.Title,
+        Ingredients = recipeDto.Ingredients,
+        Description = recipeDto.Description,
+        CookingTime = recipeDto.CookingTime,
+        UserId = recipeDto.UserId // Set UserId from DTO
+    };
+
     db.Recipes.Add(recipe);
     await db.SaveChangesAsync();
-    return Results.Created($"/recipes/{recipe.Id}", recipe); // Assuming Recipe has an Id property
+    return Results.Created($"/recipes/{recipe.Id}", recipe);
 });
 
 app.Run();

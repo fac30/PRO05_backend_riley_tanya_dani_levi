@@ -34,3 +34,4 @@ public class Recipe
 
     public ICollection<CollectionRecipe>? CollectionRecipes { get; set; }
 }
+
