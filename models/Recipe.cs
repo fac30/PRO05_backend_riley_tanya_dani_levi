@@ -34,9 +34,9 @@ public class Recipe
 
     public ICollection<CollectionRecipe>? CollectionRecipes { get; set; }
 
-    public static implicit operator Recipe(Recipe v)
-    {
-        throw new NotImplementedException();
-    }
+    // public static implicit operator Recipe(Recipe v)
+    // {
+    //     throw new NotImplementedException();
+    // }
 }
 
